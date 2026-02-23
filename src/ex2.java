@@ -2,55 +2,29 @@ import java.util.Scanner;
 
 public class ex2 {
     static Scanner sc = new Scanner(System.in);
-    static int [] rm = new int[30];
-    static double [] nota1 = new double[30];
-    static double [] nota2 = new double[30];
-    static double [] media = new double[30];
-    static String [] status = new String[30];
+    static final int N = 30;
+
+
     public static void main(String[] args) {
-        for(int j=0;j<30;j++){}
-            entradaDeDados();
-            calcularMedia();
-            gerarAprovados();
-        //apresentar dados
-        for(int i=0;i<30;i++){
-            if(rm[i] >= 0){
-                System.out.printf("RM: %d | Média: %.1f | Status: %s\n", rm[i], media[i], status[i]);
-            } else {
-                break;
-            }
-        }
+        int[] rm = new int[N];
+        double[] nota1 = new double[N];
+        double[] nota2 = new double[N];
+        entradaDados(rm, nota1, nota2);
     }
-    public static void entradaDeDados(){
-        for(int i=0;i<30;i++) {
-            System.out.println("Digite seu RM: ");
-            rm[i] = sc.nextInt();
-            //verificar rm
-            if (rm[i] < 0) {
-                break;
-            }
+    public static void entradaDados(int []rm, double []nota1, double []nota2) {
+        //receber dados
+        int n = 0;
+        System.out.println("Digite seu RM: ");
+        int rmLido = sc.nextInt();
+        while (rmLido >= 0 && n < N) {
+            rm[n] = rmLido;
             System.out.println("Digite sua nota1: ");
-            nota1[i] = sc.nextDouble();
+            nota1[n] = sc.nextDouble();
             System.out.println("Digite sua nota2: ");
-            nota2[i] = sc.nextDouble();
+            nota2[n] = sc.nextDouble();
+            n++;
+            System.out.println("Digite seu RM: ");
+            rmLido = sc.nextInt();
         }
     }
-    public static void calcularMedia(){
-        //media
-        for(int i=0;i<30;i++){
-            media[i] = (nota1[i] + nota2[i])/2;
-        }
-    }
-    public static void gerarAprovados(){
-        //gerear aprovado e reprovado
-        for(int i=0;i<30;i++){
-            if (media[i] >= 6){
-                status[i] = "Aprovado";
-            } else {
-                status[i] = "Reprovado";
-            }
-        }
-    }
-
-
 }
