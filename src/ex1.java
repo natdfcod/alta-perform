@@ -23,14 +23,18 @@ public class ex1 {
             rmLido = sc.nextInt();
         }
         double[] media = new double[n];
+        int[] rmAprovados = new int[n];
         for(int i = 0; i < n; i++){
             //media
             media[i] = (nota1[i]+nota2[i])/2;
             //gerear aprovado e reprovado
             if (media[i] >= 6) {
-            //apresentar dados
-            System.out.printf("RM: %d | Média: %.1f | Status: Aprovado\n", rm[i], media[i]);
+                rmAprovados[i] = rm[i];
             }
+        }
+        for (int i = 0; i < n; i++) {
+            //apresentar dados
+            System.out.printf("RM: %d | Média: %.1f\n", rmAprovados[i], media[i]);
         }
     }
 }
