@@ -3,14 +3,15 @@ import java.util.Scanner;
 public class ex1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int [] rm = new int[30];
-        double [] nota1 = new double[30];
-        double [] nota2 = new double[30];
-        double [] media = new double[30];
-        String [] status = new String[30];
+        final int N = 30;
+        int [] rm = new int[N];
+        double [] nota1 = new double[N];
+        double [] nota2 = new double[N];
+        double [] media = new double[N];
+        String [] status = new String[N];
 
         //receber dados
-        for(int i=0;i<30;i++){
+        for(int i=0;i<N;i++){
         System.out.println("Digite seu RM: ");
         rm[i] = sc.nextInt();
         //verificar rm
@@ -31,7 +32,7 @@ public class ex1 {
         }
         }
         //apresentar dados
-        for(int i=0;i<30;i++){
+        for(int i=0;i<N;i++){
             if(rm[i] >= 0){
             System.out.printf("RM: %d | Média: %.1f | Status: %s\n", rm[i], media[i], status[i]);
             } else {
