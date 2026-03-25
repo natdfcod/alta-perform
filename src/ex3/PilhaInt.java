@@ -2,14 +2,14 @@ package ex3;
 
 public class PilhaInt {
     final int N=6;
-    int dados[]=new int[N];
+    int[] dados = new int[N];
     int topo;
 
     public void init(){
-        topo=0;
+        topo = 0;
     }
     public boolean isEmpty(){
-        return (topo==0);
+        return (topo == 0);
     }
     public boolean isFull(){
         return topo == N;
@@ -19,20 +19,17 @@ public class PilhaInt {
             System.out.println("Stack overflow");
             return;
         }
-        dados[topo]=elem;
-        topo++;
+        dados[topo++] = elem;
     }
     public int top(){
         return dados[topo-1];
     }
     public int pop(){
-        topo--;
-        return dados[topo];
-
+        return dados[--topo];
     }
-    public void esvaziar(){
+    public void esvaziar(String between){
         while (!isEmpty()){
-            System.out.print(" "+ pop() );
+            System.out.printf("%s"+ pop(), between);
         }
     }
 }
