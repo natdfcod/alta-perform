@@ -1,7 +1,7 @@
 package ex3;
 
 public class PilhaInt {
-    final int N=6;
+    final int N=10;
     int[] dados = new int[N];
     int topo;
 
