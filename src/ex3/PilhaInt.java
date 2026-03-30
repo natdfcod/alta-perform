@@ -25,7 +25,8 @@ public class PilhaInt {
         return dados[topo-1];
     }
     public int pop(){
-        return dados[--topo];
+        topo--;
+        return dados[topo];
     }
     public void esvaziar(String between){
         while (!isEmpty()){

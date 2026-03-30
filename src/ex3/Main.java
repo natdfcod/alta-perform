@@ -6,6 +6,7 @@ public class Main {
         pilha.init();
         pilha.push(20);
         pilha.push(21);
+        pilha.pop();
 
 
     }
