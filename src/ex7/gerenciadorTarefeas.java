@@ -1,18 +1,20 @@
-package ex6;
+package ex7;
+import ex6.FilaInt;
 
 import java.util.Scanner;
 
-public class Main {
+public class gerenciadorTarefeas {
     static FilaInt fila = new FilaInt();
     static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         fila.init();
         int opcao;
         do {
             System.out.print("""
-                    [1] - Insere o aluno na fila
-                    [2] - Retira o aluno da fila
-                    [3] - Encerra atendimento
+                    [1] - Insere o processo na fila
+                    [2] - Executa precesso
+                    [3] - Shutdown
                     Digite sua resposta -->""");
             opcao = sc.nextInt();
             switch (opcao){
@@ -25,26 +27,25 @@ public class Main {
     }
 
     private static void encerrar() {
-        if(!fila.isEmpty()){
+        if (!fila.isEmpty()){
             System.out.println("Encerrando...");
-        }
-
-    }
-
-    private static void inserir() {
-        if(!fila.isFull()){
-            System.out.print("Digite o rm do aluno -> ");
-            fila.enqueue(sc.nextInt());
         } else {
-            System.out.println("Fila cheia!!");
+            System.out.println("Fila não esta vazia!");
         }
     }
 
     private static void retira() {
-        if (!fila.isEmpty()) {
+        if (!fila.isEmpty()){
             fila.dequeue();
         } else {
-            System.out.println("Fila vazia!!");
+            System.out.println("Sem processos a executar");
+        }
+    }
+
+    private static void inserir() {
+        if (!fila.isFull()){
+            System.out.print("Digite o byd do processo ->");
+            fila.enqueue(sc.nextInt());
         }
     }
 }
