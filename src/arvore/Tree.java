@@ -33,5 +33,13 @@ public class Tree {
         }
     }
 
+    public int contaNos(NO p, int cont){
+        if (p != null){
+            cont++;
+            cont = contaNos(p.esq, cont);
+            cont = contaNos(p.dir, cont);
+        }
+        return cont;
+    }
 
 }
