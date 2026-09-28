@@ -1,4 +1,4 @@
-package arvore;
+package arvore.primeira;
 
 public class Tree {
     public NO root = null;

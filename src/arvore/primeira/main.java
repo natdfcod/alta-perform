@@ -1,4 +1,4 @@
-package arvore;
+package arvore.primeira;
 
 import java.util.Scanner;
 
